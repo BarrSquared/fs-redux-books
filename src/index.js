@@ -10,6 +10,10 @@ import * as serviceWorker from './serviceWorker';
 
 const bookList = (state = [], action) => {
   // TODO - set book list with data from server
+  if(action.type === 'SET_BOOK_LIST') {
+    // not ADD_BOOK, because we're returning whatever is in the payload
+    return action.payload;
+  }
   return state;
 }
 
