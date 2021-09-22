@@ -16,10 +16,11 @@ function App() {
     fetchBookList();
   },[]);
 
+   // TODO - GET Book List from server
   const fetchBookList = () => {
     axios ({
       method: 'GET',
-      url: '/books',
+      url: '/books', // the url is from our server.js to access the db
     }).then(response => {
       console.log(response.data);
       dispatch({ 
@@ -29,13 +30,13 @@ function App() {
     })
   }
 
-  // TODO - GET Book List from server
+ 
 
   return (
     <div className="App">
       <header><h1>Books w/ Redux!</h1></header>
       <main>
-        <BookForm />
+        <BookForm fetchBookList={fetchBookList}/>
         <BookList />
       </main>
     </div>

@@ -7,13 +7,14 @@ import './index.css';
 import App from './components/App/App';
 import * as serviceWorker from './serviceWorker';
 
-
+// reducers will either be in index.js or imported into it
 const bookList = (state = [], action) => {
   // TODO - set book list with data from server
   if(action.type === 'SET_BOOK_LIST') {
     // not ADD_BOOK, because we're returning whatever is in the payload
     return action.payload;
   }
+  // default is return no change to data
   return state;
 }
 
