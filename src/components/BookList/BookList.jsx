@@ -2,6 +2,7 @@ import {useSelector} from 'react-redux'
 
 function BookList() {
   const bookList = useSelector(store => store.bookList);
+// short hand for just pulling bookList out of the store
 
   return (
     <section>
